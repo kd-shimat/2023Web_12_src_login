@@ -1,0 +1,49 @@
+/* ページ全体を中央に表示（センタリング）するには、
+   ページ全体である<body>～</body>の中に<div>～</div>を入れ、
+   その<div>～</div>を中央に表示する。
+   次のbodyと#mainの2つの設定で実装される。
+*/
+
+/* body要素内の文字列をセンタリング */
+body {
+  text-align: center;
+}
+
+/* <div id="main">～</div>全体をセンタリング */
+#main {
+  margin: 0 auto;
+}
+
+/* テーブルの境界線を表示せず(0ピクセル)とし、センタリング表示する */
+#mainTable {
+  border: 0px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* thタグのデータを右詰めで表示 */
+th.right-align {
+  text-align: right;
+}
+
+/* tdタグのデータを左詰めで表示 */
+td.left-align {
+  text-align: left;
+}
+
+/* register.jspで使用。テーブルの境界線を1ピクセルとし、センタリング表示する */
+#regiTable {
+  border: 1px solid;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* register.jspで使用。thタグの境界線を1pxで表示 */
+#regiTable th {
+  border: 1px solid;
+}
+
+/* register.jspで使用。tdタグの境界線を1pxで表示 */
+#regiTable td {
+  border: 1px solid;
+}

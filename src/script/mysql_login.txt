@@ -1,0 +1,18 @@
+# データベース login の作成
+set names utf8;
+drop database if exists login;
+create database login character set utf8 collate utf8_general_ci;
+
+# ユーザー「denshi」にパスワード「kobe」を設定し、データベース「login」に対する全ての権限を付与
+grant all privileges on login.* to denshi@localhost identified by 'kobe';
+
+# データベース login を使用
+use login;
+
+# テーブル password の作成
+# mysqlでは、char、varcharカラムに対して検索条件（where）やソート（order by）時に
+# 大文字小文字を区別しない　・・・　デフォルトの照合順序（utf8_general_ci）
+# 区別させる場合にはテーブル作成時に binary(バイナリ)属性を設定する必要がある。
+create table users(userId varchar(8) binary primary key,
+                    password varchar(12) not null,
+                    userName varchar(50) not null);
